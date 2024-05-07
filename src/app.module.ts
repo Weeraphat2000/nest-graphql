@@ -13,13 +13,18 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 // import { AppResolver } from './app.resolver';
 import { TestModule } from './test/test.module';
+import { join } from 'path';
 
 @Module({
   imports: [
+    // GraphQLModule.forRoot<ApolloDriverConfig>({
+    //   driver: ApolloDriver,
+    //   autoSchemaFile: true,
+    //   // autoSchemaFile: 'schema.gql',
+    // }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: true,
-      // autoSchemaFile: 'schema.gql',
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     TestModule,
   ],

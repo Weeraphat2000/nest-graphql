@@ -2,10 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { CreateTestInput } from './dto/create-test.input';
 import { UpdateTestInput } from './dto/update-test.input';
 import { Test } from './entities/test.entity';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class TestService {
-  alluser: CreateTestInput[] = [
+  constructor(private readonly prismaService: PrismaService) {}
+  alluser: { exampleField: number; name: string; exampleField2: number }[] = [
     {
       exampleField: 1,
       name: 'Ali',
@@ -27,7 +29,8 @@ export class TestService {
   // }
 
   findAll() {
-    return this.alluser;
+    return this.prismaService.order.findMany({ include: { userid: true } });
+    // return this.prismaService.order.findMany();
   }
 
   // findOne(id: number) {

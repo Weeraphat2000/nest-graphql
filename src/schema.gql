@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  """Example field (placeholder)"""
+  id: Int!
+
+  """Example field (placeholder)"""
+  name: String!
+
+  """Example field (placeholder)"""
+  description: String!
+
+  """Example field (placeholder)"""
+  password: String!
+}
+
+type Test {
+  """Example field (placeholder)"""
+  id: Int!
+
+  """Example field (placeholder)"""
+  userId: Int!
+
+  """Example field (placeholder)"""
+  amount: Int!
+
+  """Example field (placeholder)"""
+  title: String!
+
+  """Example field (placeholder)"""
+  userid: User!
+}
+
+type Query {
+  test: [Test!]!
+}

@@ -1,7 +1,7 @@
-import { InputType, Int, Field } from '@nestjs/graphql';
+import { ObjectType, Field, Int } from '@nestjs/graphql';
 
-@InputType()
-export class CreateTestInput {
+@ObjectType()
+export class User {
   @Field(() => Int, { description: 'Example field (placeholder)' })
   id: number;
 
