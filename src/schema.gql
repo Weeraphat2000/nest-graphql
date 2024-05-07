@@ -35,4 +35,6 @@ type Test {
 
 type Query {
   test: [Test!]!
+  users: [User!]!
+  user(id: Int!): User!
 }

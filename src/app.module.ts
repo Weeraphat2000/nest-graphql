@@ -14,6 +14,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 // import { AppResolver } from './app.resolver';
 import { TestModule } from './test/test.module';
 import { join } from 'path';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { join } from 'path';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     TestModule,
+    UsersModule,
   ],
   // providers: [AppResolver],
 })
