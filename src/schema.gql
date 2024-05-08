@@ -56,6 +56,7 @@ type Query {
 
 type Mutation {
   createTest(createTestInput: CreateTestInput!): CreateTypeOutput!
+  updateTest(updateTestInput: UpdateTestInput!, id: Int!): CreateTypeOutput!
 }
 
 input CreateTestInput {
@@ -67,4 +68,11 @@ input CreateTestInput {
 
   """Example field (placeholder)"""
   password: String!
+}
+
+input UpdateTestInput {
+  name: String!
+  description: String!
+  password: String!
+  id: Int!
 }

@@ -1,6 +1,6 @@
 import { InputType, Int, Field } from '@nestjs/graphql';
 
-@InputType()
+@InputType() // สำหรับรับค่าจาก client ต้องเป็น @InputType
 export class CreateTestInput {
   // @Field(() => Int, { description: 'Example field (placeholder)' })
   // id: number;

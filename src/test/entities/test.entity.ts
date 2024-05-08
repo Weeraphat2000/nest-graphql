@@ -2,6 +2,7 @@ import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { User } from './user.entity';
 
 @ObjectType() // ต้องมี ObjectType ด้วย output ของ entity
+// สำหรับส่งค่ากลับไปให้ client ต้องเป็น @ObjectType
 export class Test {
   @Field(() => Int, { description: 'Example field (placeholder)' })
   id: number;
