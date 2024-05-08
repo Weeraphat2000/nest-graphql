@@ -33,8 +33,38 @@ type Test {
   userid: User!
 }
 
+type CreateTypeOutput {
+  """Example field (placeholder)"""
+  id: Int!
+
+  """Example field (placeholder)"""
+  name: String!
+
+  """Example field (placeholder)"""
+  description: String!
+
+  """Example field (placeholder)"""
+  password: String!
+}
+
 type Query {
-  test: [Test!]!
+  tests: [Test!]!
+  test(id: Int!): Test!
   users: [User!]!
   user(id: Int!): User!
+}
+
+type Mutation {
+  createTest(createTestInput: CreateTestInput!): CreateTypeOutput!
+}
+
+input CreateTestInput {
+  """Example field (placeholder)"""
+  name: String!
+
+  """Example field (placeholder)"""
+  description: String!
+
+  """Example field (placeholder)"""
+  password: String!
 }
